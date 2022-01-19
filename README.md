@@ -2,7 +2,6 @@
 A bunch of configurations for getting Kubernetes up and running on 2+ Linux servers.
 
 <br>
-<br>
 
 ## Useful commands
 
