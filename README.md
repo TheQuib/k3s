@@ -6,8 +6,6 @@ A bunch of configurations for getting Kubernetes up and running on 2+ Linux serv
 
 ## Useful commands
 
-<br>
-
 ### Allow user(s) to interface with Docker without sudo
 
 <br>
