@@ -1,11 +1,11 @@
 # Disclaimer
 I do not own this readme, it and its most recent version can be found on the K3s [Github repository](https://github.com/k3s-io/k3s)
-<br>
-<br>
-<br>
----------
 
+<br>
 
+<br>
+
+<br>
 
 K3s - Lightweight Kubernetes
 ===============================================
