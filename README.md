@@ -1,5 +1,7 @@
 # Kubernetes Configurations
-A bunch of configurations for getting Kubernetes up and running on 2+ Linux servers.
+A bunch of configurations for getting Kubernetes up and running on 3+ Ubuntu Linux servers using K3s from Rancher.
+<br>
+Documentation for the cluster can be found under the [cluster directory](cluster/README.md)
 
 <br>
 
