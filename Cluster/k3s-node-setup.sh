@@ -5,7 +5,7 @@
 # Database (MySQL) endpoint server with credentials
 # Usage:
 #   'mysql://[database_user]:[password]@tcp([database_server_ip]:[database_server_port])/[database_name]''
-export K3S_DATASTORE_ENDPOINT='mysql://root:spindle-trace@tcp(10.175.134.133:3306)/k3s'
+export K3S_DATASTORE_ENDPOINT='mysql://k3s:spindle-trace@tcp(10.175.134.133:3306)/k3s'
 
 # Install k3s
 # Usage:
