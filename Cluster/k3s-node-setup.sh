@@ -10,4 +10,4 @@ export K3S_DATASTORE_ENDPOINT='mysql://k3s:spindle-trace@tcp(10.175.134.133:3306
 # Install k3s
 # Usage:
 #   'curl -sfL https://get.k3s.io | sh -s - server --node-taint CriticalAddonsOnly=true:NoExecute --tls-san [load_balancer_ip]
-curl -sfL https://get.k3s.io | sh -s - server --node-taint CriticalAddonsOnly=true:NoExecute --tls-san 10.175.130.130
+curl -sfL https://get.k3s.io | sh -s - server --node-taint CriticalAddonsOnly=true:NoExecute --tls-san 10.175.134.130
