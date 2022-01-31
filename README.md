@@ -15,7 +15,7 @@ In my environment, I'm running a total of 5 virtual machines (IP addresses for d
    - Configs can be found in [Cluster](/Cluster) 
  - KubeAgent1 (10.175.134.141)
    - Agent that will run Kubernetes workloads
-   - See (Get Kubernetes token from Node)[#get-kubernetes-token-from-node] below
+   - See [Get Kubernetes token from Node](#get-kubernetes-token-from-node) below
  - KubeDB (10.175.134.133)
    - Database server that stores Kubernetes information
    - Configs can be found in [DB](/DB)
