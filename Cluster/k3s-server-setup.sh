@@ -17,4 +17,4 @@ curl -sfL https://get.k3s.io | sh -s - server --node-taint CriticalAddonsOnly=tr
 #   - sudo cat /var/lib/rancher/k3s/server/node-token
 # Same as first server, run the install command, but with the --token flag
 #   - 'curl -sfL https://get.k3s.io | sh -s - server --node-taint CriticalAddonsOnly=true:NoExecute --tls-san [load_balancer_ip]
-curl -sfL https://get.k3s.io | sh -s - server --node-taint CriticalAddonsOnly=true:NoExecute --tls-san 10.175.134.130 a;slfja;slgha;oifgjha;sodiha;rog
+curl -sfL https://get.k3s.io | sh -s - server --node-taint CriticalAddonsOnly=true:NoExecute --tls-san 10.175.134.130 AJAKEKGA3453434FDKJBN443453KJADHKNJLN
