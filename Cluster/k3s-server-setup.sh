@@ -10,11 +10,11 @@ export K3S_DATASTORE_ENDPOINT='mysql://k3s:spindle-trace@tcp(10.175.134.133:3306
 # Install k3s on server 1
 # Usage:
 #   - 'curl -sfL https://get.k3s.io | sh -s - server --node-taint CriticalAddonsOnly=true:NoExecute --tls-san [load_balancer_ip]
-curl -sfL https://get.k3s.io | sh -s - server --node-taint CriticalAddonsOnly=true:NoExecute --tls-san 10.175.134.130
+curl -sfL https://get.k3s.io | sh -s - server --node-taint CriticalAddonsOnly=true:NoExecute --tls-san 10.175.134.134
 
 # Install k3s on server 2
 # Obtain Kubernetes key from first server
 #   - sudo cat /var/lib/rancher/k3s/server/node-token
 # Same as first server, run the install command, but with the --token flag
 #   - 'curl -sfL https://get.k3s.io | sh -s - server --node-taint CriticalAddonsOnly=true:NoExecute --tls-san [load_balancer_ip]
-curl -sfL https://get.k3s.io | sh -s - server --node-taint CriticalAddonsOnly=true:NoExecute --tls-san 10.175.134.130 AJAKEKGA3453434FDKJBN443453KJADHKNJLN
+curl -sfL https://get.k3s.io | sh -s - server --node-taint CriticalAddonsOnly=true:NoExecute --tls-san 10.175.134.134 AJAKEKGA3453434FDKJBN443453KJADHKNJLN
