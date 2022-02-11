@@ -14,3 +14,4 @@
  - Users:
    - k3s
      - Given full access to k3s database
+     - Make sure remote login is allowed for user
