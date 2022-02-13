@@ -18,3 +18,6 @@ kubectl exec -it $POD_NAME curl localhost
 kubectl scale --replicas=2 deploy/nginx-test
 # This can be scaled as much as needed, ex:
 kubectl scale --replicas=20 deploy/mysite
+
+# Get the status of the deployment as a whole:
+kubectl get deployment nginx-test
