@@ -21,3 +21,8 @@ kubectl scale --replicas=20 deploy/mysite
 
 # Get the status of the deployment as a whole:
 kubectl get deployment nginx-test
+
+# Delete the deployment:
+kubectl delete deploy nginx-test
+
+# If you check the kubernetes dashboard again, the pods should be gone
