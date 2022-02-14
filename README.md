@@ -1,56 +1,53 @@
 # Kubernetes Configurations
 A bunch of configurations for getting Kubernetes up and running on 3+ Ubuntu Linux servers using K3s from Rancher.
-<br>
-Documentation for the cluster can be found under the [Cluster](cluster/README.md) directory.
 
 <br>
 
 # My Environment
-In my environment, I'm running a total of 5 virtual machines (IP addresses for documentation reference):
- - KubeNode1 (10.175.134.131)
-   - Server 1 that runs the Kubernetes API, sits behind the load balancer
-   - Configs can be found in [Cluster](/Cluster) 
- - KubeNode2 (10.175.134.132)
-   - Server 2 that runs the Kubernetes API, sits behind the load balancer
-   - Configs can be found in [Cluster](/Cluster) 
- - KubeAgent1 (10.175.134.141)
-   - Agent that will run Kubernetes workloads
-   - See [Get Kubernetes token from Node](#get-kubernetes-token-from-node) below
+
+## Servers
+In my environment, I'm running a total of 8 virtual machines (IP addresses for documentation reference):
+ - k3sServer1 (10.175.134.131)
+ - k3sServer2 (10.175.134.132)
+ - k3sAgent1 (10.175.134.141)
+ - k3sAgent2 (10.175.134.142)
+ - k3sAgent3 (10.175.134.143)
  - KubeDB (10.175.134.133)
-   - Database server that stores Kubernetes information
-   - Configs can be found in [DB](/DB)
- - KubeProxy (10.175.134.130)
-   - NGINX web server acting as a reverse proxy load balancer
-   - Configs can be found in [LoadBalancer]([/LoadBalancer)
+ - k3sLoadBalancer (10.175.134.134)
+ - k3sDev (10.175.134.139)
 
-<br>
+## Roles
+ - k3s Servers
+   - Denoted as `masters` by Kubernetes
+   - Run the kubernetes API, which drives the worker agents
+   - Load Balanced
+   - Configs found in [Cluster/k3s-server-setup](/Cluster/k3s-server-setup.sh)
+ - k3s Agents (workers)
+   - Denoted as `workers` by Kubernetes
+   - Run workloads called `Pods`, identical instances of the same container
+   - Configs found in [Cluster/k3s-agent-setup.sh](/Cluster/k3s-agent-setup.sh)
+ - k3s Database
+   - Provides database information for the cluster
+   - Each master server communicates with this
+   - Agents communicate to the masters only
+ - Load Balancer
+   - Load balances services for communication
+     - For both the masters and services to be accessed
+   - Configs found in [LoadBalancer](/LoadBalancer)
+ - Dev Machine
+   - A machine with Kubectl installed,
+   - Downloaded `kubeconfig` from a master server
+     - See [Dev machine requirements](#dev-machine-requirements)
 
-## Useful commands
 
-### View current available nodes in k3s Kubernetes Cluster
-
-```bash
-sudo k3s kubectl get node
-```
-
-<br>
-
-### Get Kubernetes token from Node
-
-```bash
-sudo cat /var/lib/rancher/k3s/server/node-token
-```
-
-<br>
-
-### Allow user(s) to interface with Docker without sudo
-
-```bash
-#Should already exist after installing docker
-sudo groupadd docker
-
-sudo usermod -aG docker $USER
-
-#Update docker group data
-newgrp docker
-```
+# Dev Machine Requirements
+To deploy workloads, you will need a separate client machine with:
+ - Install `kubectl`
+   - `curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add`
+   - `sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"`
+   - `sudo apt-get install kubeadm kubelet kubectl`
+   - `sudo apt-mark hold kubeadm kubelet kubectl`
+   - Verify installation with `kubeadm version`
+ - Kubeconfig from Master server
+   - Connect to master server and run `sudo cat /etc/rancher/k3s/k3s.yaml`
+   - Save these contents to `~/.kube/config`
