@@ -1,5 +1,20 @@
 # Kubernetes Configurations
-A bunch of configurations for getting Kubernetes up and running on 3+ Ubuntu Linux servers using K3s from Rancher.
+Configurations, scripts, and commands for getting k3s up and running on at least 1 server and 1 worker node.
+
+A bit of information on my implementation can be found below, and more specific installation instructions can be found under each directory.
+
+## Directory Information
+ - **Cluster**
+   - Information on how to get a k3s cluster running
+ - **DB**
+   - Information for the external database for k3s master servers
+ - **LoadBalancer**
+   - Information for the master server load balancer
+   - This was done using nginx, but can be adapted to use any load balancer
+ - **Rancher**
+   - *Optional*, Rancher is an open-source web-based Kubernetes orchestrator
+ - **Workloads**
+   - *Optional*, example commands / configurations for Kubernetes workloads you can deploy
 
 <br>
 
