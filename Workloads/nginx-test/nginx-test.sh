@@ -4,7 +4,8 @@
 
 # WARNING: Make sure you have the deployment .yaml file in your current directory (or create one)
 
-kubectl deploy -f nginx-test.yaml
+# Apply the configuration
+kubectl apply -f nginx-test.yaml
 
 # You can then view the pods (or check the dashboard/pods page)
 # This will take a few seconds to pull the image and start the container
