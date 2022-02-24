@@ -6,7 +6,6 @@ These are relatively self documented.
 ## Order of operations
 1. [k3s-server-setup.sh](/k3s-server-setup.sh)
 1. [k3s-agent-setup.sh](/k3s-agent-setup.sh)
-1. [k3s-server-helm-setup.sh](/k3s-server-helm-setup.sh)
 
 ## Useful commands
 1. Get Kubernetes token (from master server only):
