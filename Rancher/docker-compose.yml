@@ -3,7 +3,7 @@ version: '3'
 
 services:
   rancher:
-    image: rancher/rancher:latest
+    image: rancher/rancher:stable
     container_name: rancher
     privileged: true
     restart: unless-stopped
