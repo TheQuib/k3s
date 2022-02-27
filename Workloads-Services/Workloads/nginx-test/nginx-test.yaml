@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
         - name : nginx-test
-          image: nginx
+          image: thequib/nginx-docker:latest
           ports:
             - containerPort: 80
+              name: web
