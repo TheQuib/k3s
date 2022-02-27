@@ -7,7 +7,7 @@
 # Apply the configuration
 kubectl apply -f nginx-test.yaml
 
-# You can then view the pods (or check the dashboard/pods page)
+# You can then view the pods
 # This will take a few seconds to pull the image and start the container
 kubectl get pods
 # Note the name of the running pod, we'll call this $POD_NAME
